@@ -6,9 +6,21 @@
 //
 
 #include <iostream>
+#include "2048.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    Gamestate g;
+    
+    std::size_t i = 0;
+    
+    for(auto row : g.get_game_board()) {
+        for(auto x : row) {
+            std::cout << x << " ";
+            ++i;
+            if(i == 4) {
+                i = 0;
+                std::cout << "\n";
+            }
+        }
+    }
 }
