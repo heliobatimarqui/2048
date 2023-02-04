@@ -17,6 +17,8 @@ int main(int argc, const char * argv[]) {
         
         std::cin >> c;
         
+        c = std::tolower(c);
+        
         if(c == 'd') {
             g.move_in_direction(MovementDirection::RIGHT);
         }
@@ -39,13 +41,12 @@ int main(int argc, const char * argv[]) {
             for(auto x : row) {
                 std::cout << x << " ";
                 ++i;
-                if(i == 4) {
+                if(i == row.size()) {
                     i = 0;
                     std::cout << "\n";
                 }
             }
             std::cout << "\n";
         }
-    
     }
 }
